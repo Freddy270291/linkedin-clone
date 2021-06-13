@@ -5,9 +5,11 @@ import SearchIcon from "@material-ui/icons/Search";
 function Header() {
   return (
     <div>
-      <h1>This is the Header</h1>
       <div className='header__left'>
-        <img src='' alt='Linkedin Logo' />
+        <img
+          src='https://www.flaticon.com/svg/static/icons/svg/174/174857.svg'
+          alt='Linkedin Logo'
+        />
         <div className='header__search'>
           {/* Search Icon */}
           <SearchIcon />
