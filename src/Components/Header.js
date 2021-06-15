@@ -17,7 +17,6 @@ function Header() {
           alt='Linkedin Logo'
         />
         <div className='header__search'>
-          {/* Search Icon */}
           <SearchIcon />
           <input type='text' />
         </div>
@@ -28,10 +27,13 @@ function Header() {
         <HeaderOption Icon={BusinessCenterIcon} title='Jobs' />
         <HeaderOption Icon={ChatIcon} title='Messaging' />
         <HeaderOption Icon={NotificationsIcon} title='Notifications' />
+        <HeaderOption
+          avatar='https://compassionate-leakey-e9b16b.netlify.app/images/IG_Sonny.jpeg'
+          title='me'
+        />
       </div>
     </div>
   );
 }
 
 export default Header;
-

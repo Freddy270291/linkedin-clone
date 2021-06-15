@@ -40,3 +40,9 @@
   display: flex;
   align-items: center;
 }
+
+@media (min-width: 768px) {
+  .header__search > input {
+    min-width: 400px;
+  }
+}
