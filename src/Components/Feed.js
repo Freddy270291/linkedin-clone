@@ -2,6 +2,10 @@ import React from "react";
 import "./Feed.css";
 import CreateIcon from "@material-ui/icons/Create";
 import InputOption from "./InputOption";
+import ImageIcon from "@material-ui/icons/Image";
+import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
+import EventNoteIcon from "@material-ui/icons/EventNote";
+import CalendarViewDayIcon from "@material-ui/icons/CalendarViewDay";
 
 function Feed() {
   return (
@@ -15,7 +19,14 @@ function Feed() {
           </form>
         </div>
         <div className='feed__inputOptions'>
-          <InputOption />
+          <InputOption title='Photo' Icon={ImageIcon} color='#70B5F9' />
+          <InputOption title='Video' Icon={SubscriptionsIcon} color='#E7A33E' />
+          <InputOption title='Event' Icon={EventNoteIcon} color='#C0CBCD' />
+          <InputOption
+            title='Write Article'
+            Icon={CalendarViewDayIcon}
+            color='#7FC15E'
+          />
         </div>
       </div>
     </div>
@@ -23,5 +34,3 @@ function Feed() {
 }
 
 export default Feed;
-
-//1:44
