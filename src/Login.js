@@ -3,10 +3,10 @@ import { auth } from "./Components/firebase";
 import "./Login.css";
 
 function Login() {
-  const [email, SetEmail] = useState("");
-  const [name, SetName] = useState("");
-  const [password, SetPassword] = useState("");
-  const [profilePic, SetProfilePic] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [profilePic, setProfilePic] = useState("");
 
   const loginToApp = (e) => {
     e.preventDefault();
@@ -63,5 +63,3 @@ function Login() {
 }
 
 export default Login;
-
-// 3:05:30
