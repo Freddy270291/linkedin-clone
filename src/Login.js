@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { auth } from "./Components/firebase";
+import { login } from "./features/userSlice";
 import "./Login.css";
 
 function Login() {
@@ -7,12 +9,38 @@ function Login() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [profilePic, setProfilePic] = useState("");
+  const dispatch = useDispatch();
 
   const loginToApp = (e) => {
     e.preventDefault();
   };
 
-  const register = () => {};
+  const register = () => {
+    if (!name) {
+      return alert("Please enter a full name!");
+    }
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        userAuth.user
+          .updateProfile({
+            displayName: name,
+            photoURL: profilePic,
+          })
+          .then(() => {
+            dispatch(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: name,
+                photoUrl: profilePic,
+              })
+            );
+          });
+      })
+      .catch((error) => alert(error));
+  };
 
   return (
     <div className='login'>
@@ -63,3 +91,5 @@ function Login() {
 }
 
 export default Login;
+
+// 3:16:00
